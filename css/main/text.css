@@ -1,0 +1,389 @@
+.language-title > span {
+    color: var(--txt-color);
+    font-family: moglandemo;
+}
+
+.language-title > .bold-text {
+    font-size: clamp(2rem, 100vw, 3rem);
+}
+
+.language-title > .regular-text {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+
+.language-title > span {
+    color: var(--txt-color);
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    font-family: moglandemo;
+}
+
+
+.language-box > span {
+    color: var(--txt-color);
+    font-family: moglandemo;
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+
+}
+
+.main-title > h1 {
+     width: 100%;
+    text-align: center;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 10vw, 4rem);
+    font-weight: normal;
+    padding-top: 2rem;
+    color: #E7D7C0;
+    margin-bottom: 2rem;
+    z-index: 1;
+
+}
+
+
+.main-desc > span {
+    width: 100%;
+    text-align: center;
+    
+    font-family: wagon-light-italic;
+    font-size: clamp(1.2rem, 50vw, 1.5rem);
+    color: #E7D7C0;
+    opacity: 90%;
+}
+
+.ct-title > h1 {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 18vw, 8rem);
+    font-weight: normal;
+
+}
+
+#ct-h1-days {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: wagon-light-italic;
+    font-size: clamp(2rem, 15vw, 6rem);
+}
+#ct-h1-hours {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: wagon-light-italic;
+    font-size: clamp(2rem, 15vw, 6rem);
+}
+#ct-h1-mins {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: wagon-light-italic;
+    font-size: clamp(2rem, 15vw, 6rem);
+}
+#ct-h1-secs {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: wagon-light-italic;
+    font-size: clamp(2rem, 15vw, 6rem);
+}
+
+.ct-content > div > p {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: wagon-light-italic;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.info-desc {
+    text-align: center;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-family: wagon-light-italic;
+    font-size: clamp(1.1rem, 50vw, 1.3rem);
+
+    color: #E7D7C0;
+    opacity: 90%;
+}
+
+.rel-place-title > h1 {
+    width: 100%;
+    text-align: center;
+    color: #730f0f;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 18vw, 8rem);
+    font-weight: normal;
+}
+
+.rel-place-desc-title, .rel-place-dress-code-title {
+    width: 100%;
+    text-align: center;
+    color: #730f0f;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 18vw, 3rem);
+    font-weight: normal;
+}
+
+
+.rel-place-desc-adresse {
+    text-align: center;
+    width: 100%;
+    font-family: wagon-light-italic;
+    font-size: clamp(1rem, 60vw, 1.3rem);
+    color: #730f0f;
+    opacity: 90%;
+}
+
+
+
+
+.rel-place-dress-code-desc {
+    text-align: center;
+    width: 100%;
+    font-family: wagon-light-italic;
+    opacity: 90%;
+    font-size: clamp(0.7rem, 40vw, 1.3rem);
+    color: #730f0f;
+}
+
+.tl-title {
+    width: 100%;
+    text-align: center;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 18vw, 8rem);
+    font-weight: normal;
+    padding-top: 2rem;
+    color: #E7D7C0;
+    margin-bottom: 2rem;
+}
+
+.tl-content > h3 {
+    margin: 0 0 2px;
+    width: 100%;
+    font-family: wagon-light;
+    font-size: clamp(0.8rem, 15vw, 0.9rem);
+    color: #E7D7C0;
+    opacity: 90%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+}
+.tl-content > p {
+    margin: 0;
+    width: 100%;
+    font-family: wagon-light;
+    font-size: clamp(0.5rem, 10vw, 0.6rem);
+    color: #E7D7C0;
+    opacity: 90%;
+    line-height: 1.4;
+
+}
+
+.tl-modal-title, .tl-modal-desc {
+  
+    color: #730f0f;
+    font-family: wagon-light-italic;
+    font-size: clamp(0.5rem, 60vw, 1.2rem);
+
+
+}
+
+.tl-modal-title {
+    margin-bottom: 10px;
+}
+
+.open-modal-btn {
+    color: #730f0f;
+    font-family: wagon-light-italic;
+    font-size: clamp(0.5rem, 60vw, 0.8rem);
+}
+
+
+.rcp-main-title > h1 {
+    width: 100%;
+    text-align: center;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 12vw, 8rem);
+    font-weight: normal;
+    padding-top: 2rem;
+    color: #E7D7C0;
+    margin-bottom: 2rem;
+}
+
+
+.rcp-main-text > h1 {
+    width: 100%;
+    text-align: center;
+    font-family: betmo-regular;
+    font-size: clamp(1rem, 10vw, 1.2rem);
+    font-weight: normal;
+    padding-top: 2rem;
+    color: #E7D7C0;
+    margin-bottom: 2rem;
+}
+
+
+.ct-rcp-title > h1 {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 25vw, 8rem);
+    font-weight: normal;
+
+}
+
+#ct-rcp-h1-days {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 13vw, 6rem);
+}
+#ct-rcp-h1-hours {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 13vw, 6rem);
+}
+#ct-rcp-h1-mins {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 13vw, 6rem);
+}
+#ct-rcp-h1-secs {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 13vw, 6rem);
+}
+
+.ct-rcp-content > div > p {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family:  wagon-light-italic ;
+    font-size: clamp(1.5rem, 6vw, 3rem);
+}
+
+.rec-place-title > h1 {
+    width: 100%;
+    text-align: center;
+    color: #6b1fad;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 18vw, 8rem);
+    font-weight: normal;
+    z-index: 2;
+}
+
+.rec-place-desc-title, .rec-place-dress-code-title {
+    width: 100%;
+    text-align: center;
+    color: #6b1fad;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 18vw, 3rem);
+    font-weight: normal;
+    z-index: 2;
+}
+
+
+.rec-place-desc-adresse {
+    text-align: center;
+    width: 100%;
+    font-family: wagon-light-italic;
+    font-size: clamp(1rem, 60vw, 1.3rem);
+    color: #6b1fad;
+    opacity: 90%;
+    z-index: 2;
+}
+
+
+
+
+.rec-place-dress-code-desc {
+    text-align: center;
+    width: 100%;
+    font-family: wagon-light-italic;
+    opacity: 90%;
+    font-size: clamp(0.7rem, 40vw, 1.3rem);
+    color: #6b1fad;
+}
+
+
+.custom-timeline-title {
+    text-align: center;
+    font-size: clamp(2rem, 18vw, 8rem);
+    color: #6b1fad;
+    margin-bottom: 30px;
+    font-family: betmo-regular;
+    font-weight: normal;
+    padding-top: 50px;
+}
+
+
+.custom-tl-right .custom-tl-text {
+    text-align: left;
+}
+
+.custom-tl-right .custom-tl-text h3 {
+    color: #000000;
+    margin: 0;
+    margin: 0 0 2px;
+    width: 100%;
+    font-family: wagon-light;
+    font-size: clamp(0.8rem, 15vw, 0.9rem);
+    opacity: 90%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    
+}
+
+.custom-tl-right .custom-tl-text p {
+    color: #000000;
+    margin: 0;
+    margin: 0 0 2px;
+    width: 100%;
+    font-family: wagon-light;
+    font-size: clamp(0.8rem, 15vw, 0.9rem);
+    opacity: 90%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+
+.custom-tl-left .custom-tl-text {
+    text-align: right;
+    order: 1; /* Texte à gauche de l'image */
+}
+
+.custom-tl-left .custom-tl-text h3 {
+    color: #000000;
+    margin: 0;
+    margin: 0 0 2px;
+    width: 100%;
+    font-family: wagon-light;
+    font-size: clamp(0.8rem, 15vw, 0.9rem);
+    opacity: 90%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    
+}
+.custom-tl-left .custom-tl-text p {
+        color: #000000;
+    margin: 0;
+    margin: 0 0 2px;
+    width: 100%;
+    font-family: wagon-light;
+    font-size: clamp(0.8rem, 15vw, 0.9rem);
+    opacity: 90%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}

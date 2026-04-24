@@ -1,0 +1,85 @@
+ :root {
+      --bg-language:  #442219;
+      --bg-main:  #FFF3E4;
+      --bg-cd: #552e14;
+      --txt-color:  #ddcbc7;
+      --box-color:  #68382B;
+
+      --main-text-color: #552E14;
+
+}
+
+@font-face {
+    font-family: suika;
+    src: url('../assets/fonts/suika/Suika-DEMO.otf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: brillant;
+    src: url('../assets/fonts/brillant/brillant.otf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: moglandemo;
+    src: url('../assets/fonts/moglandemo/Moglan_DEMO.ttf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: wagon-bold;
+    src: url('../assets/fonts/wagon/Wagon-Bold.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: wagon-light;
+    src: url('../assets/fonts/wagon/Wagon-ExtraLight.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: wagon-light-italic;
+    src: url('../assets/fonts/wagon/Wagon-ExtraLightItalic.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: tamil-italic;
+    src: url('../assets/fonts/tamil/tamil.TTF') format('truetype');
+    font-display: swap;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: tamil-normal;
+    src: url('../assets/fonts/tamil/propre/tamil-normal.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: betmo-regular;
+    src: url('../assets/fonts/betmo/betmo-regular.otf') format('opentype');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* p, span {
+    background-color: transparent;
+
+} */

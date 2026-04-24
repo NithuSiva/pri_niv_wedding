@@ -1,0 +1,10 @@
+@import url("../font.css");
+@import url("../loader.css");
+@import url("text.css");
+@import url("div.css");
+
+.loader > img {
+    width: 30%;
+    height: auto;
+}
+ 

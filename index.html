@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+        <title>Niv & Pri - Wedding</title>
+        <link rel="stylesheet" href="css/main/main.css">
+        <link rel="stylesheet" href="css/loader.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+    <body>
+
+        <div class="loader" id="loader">
+            <img src="assets/img/p-n-logo.png"/>
+
+            <div class="loader__track">
+                <div class="loader__bar" id="loader__bar"></div>
+            </div>
+        </div>
+ 
+
+        <div id="language-screen" class="language-section">
+
+            <div class="language-title">
+                <span class="bold-text">Welcome</span>
+                <br>
+                <span class="regular-text">choose your language.</span>
+            </div>
+            <div class="language-fr">
+                <button class="language-box" onclick="selectLang('fr')">
+                   <span>Francais</span> 
+                </button>
+            </div>
+            <div class="language-an">
+                <button class="language-box" onclick="selectLang('en')">
+                    <span>English</span>
+                </button>
+            </div>
+            <div class="language-ta">
+                <button class="language-box" onclick="selectLang('ta')">
+                    <span>தமிழ்</span>
+                </button>
+            </div>
+            <img class="kolam-1" src="assets/img/kolam.png" />
+            <img class="kolam-2" src="assets/img/kolam.png" />
+        </div>
+       
+        <div id="content-screen" class="content-section">
+            
+            <div id="main-screen" class="main-section">
+
+                    <div class="main-title">
+                        <h1>Priyangan & Nivertha</h1>
+                    </div>
+                    <div class="main-deco">
+                        <img class="main-deco-1" src="assets/img/deco-guirlande.png"/>
+                        <img class="main-deco-2" src="assets/img/deco-guirlande.png"/>
+                    </div>
+                    <div class="main-image">
+                        <img src="assets/img/cadre_pi_ni.png" class="colo-img"/>
+                    </div>
+                    <div class="main-desc">
+                        <span data-i18n="main-rel-details" class="main-desc-animation-1">Hindu Ceremony Details</span>
+                        <span data-i18n="main-rec-details" class="main-desc-animation-2">Reception Details</span>
+                    </div>
+            </div>
+
+            <div  class="infos-section">
+                
+                <div class="info-bar"><hr/></div>
+                <div class="info-bg-logo-1">
+                    <img src="assets/img/lotus.png"/>
+                </div>
+                <div class="info-desc">
+                    <p data-i18n="info-desc" class="info-desc">
+                        Bienvenue sur notre site web dédié à notre mariage. Vous trouverez ici toutes les informations nécessaires pour vous guider tout au long de cette journée très spéciale. Nous avons hâte de créer ces souvenirs avec vous. 
+                        Jetez un œil ci-dessous pour ne rien manquer ! 
+                    </p>
+                </div>
+                <div class="info-bg-logo-2">
+                    <img src="assets/img/lotus.png"/>
+                    </div>
+                <div class="info-image-1"> 
+                    <img src="assets/img/cadre-pri.png"/>
+                </div>
+                <div class="info-image-2">
+                    <img src="assets/img/cadre-niv.png"/>
+                </div>
+
+
+            </div>
+
+
+            <div class="superposed-images-section">
+                 <div class="superposed-logo">
+                        <img src="assets/img/ganesh-2.png"/>
+                    </div>
+                <div class="superposed-container">
+                    <!-- Logo centré au-dessus -->
+                   
+                    
+                    <!-- 4 images superposées -->
+                    <div class="superposed-grid">
+                        <!-- Image 1 - en haut à gauche -->
+                        <div class="superposed-item item-1">
+                            <img src="assets/img/env_back.png" alt="Image 1" />
+                        </div>
+                        
+                        <!-- Image 2 - en haut à droite -->
+                        <div class="superposed-item item-2">
+                            <div class="image-trigger" data-i18n-data-image="img-carte-fr" data-image="assets/img/carte-fr.png" style="cursor: pointer;">
+
+                                <img  data-i18n-img="img-carte-fr" src="assets/img/carte-reception-en.png" alt="Carte"/>
+                            </div>
+                        </div>
+                        
+                        <!-- Image 3 - en bas à gauche -->
+                        <div class="superposed-item item-3">
+                           <img src="assets/img/jasmin.png"/>
+                        </div>
+                        
+                        <div class="superposed-item item-4">
+                            <img src="assets/img/paon.png"/>
+                        </div>
+
+                        <div class="superposed-item item-5">
+                            <img src="assets/img/carte-pn.png"/>
+                        </div>
+                        <!-- Image 4 - en bas à droite -->
+                        <div class="superposed-item item-6">
+                            <img src="assets/img/env_front.png" alt="Image 6" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ct-section">
+                <div class="ct-deco">
+                <img class="ct-deco-1" src="assets/img/deco-guirlande-2.png"/>
+                </div>
+                <div class="ct-title">
+                    <h1 data-i18n="cd-title">Count Down</h1>
+                </div>
+                <div class="ct-content">
+                    <div class="ct-days">
+                        <h1 id="ct-h1-days"> -- </h1>
+                        <p data-i18n="cd-days">days</p>
+                    </div>
+                    <div class="ct-hours">
+                        <h1 id="ct-h1-hours"> -- </h1>
+                        <p data-i18n="cd-hours">hours</p>
+                    </div>
+                    <div class="ct-mins">
+                        <h1 id="ct-h1-mins"> -- </h1>
+                        <p data-i18n="cd-minutes">minutes</p>
+                    </div>
+                    <div class="ct-secs">
+                        <h1 id="ct-h1-secs"> -- </h1>
+                        <p data-i18n="cd-secondes">secondes</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="rel-place-section">
+                <div class="rel-place-title"> 
+                    <h1 data-i18n="rel-place-title">About the place</h1>
+                </div>
+                <div class="rel-place-image">
+                    <img src="assets/img/carte-salle.png"/>
+                </div>
+                <div class="rel-place-desc">
+                    <h1 data-i18n="rel-place-desc" class="rel-place-desc-title">
+                        The ceremony
+                    </h1>
+                    <p class="rel-place-desc-adresse">
+                        La Verrière 91
+                        <br>
+                        3 Rue Marie Marvingt, 
+                        <br>
+                        91700 Fleury-Mérogis
+                    </p>
+                    
+                </div>
+                <div class="rel-place-dress-code">
+                    <h1 data-i18n="rel-place-dress-code" class="rel-place-dress-code-title">Dress code</h1>
+                    <p data-i18n="rel-place-dress-code-desc"  class="rel-place-dress-code-desc">
+                        Timeless Tradition. We invite you to wear your finest traditional attire in a palette of off-white, gold, and foliage green.
+                    </p>
+                        <div class="rel-place-colors">
+                        <span class="rel-color-code-1"></span>
+                        <span class="rel-color-code-2"></span>
+                        <span class="rel-color-code-3"></span>
+                </div>
+                </div>
+                
+            </div>
+            
+        <div class="tl-wrap">
+            <h2 data-i18n="tl-title" class="tl-title">Timeline</h2>
+            <div class="tl-grid">
+                <div class="tl-vline"></div>
+                
+                <!-- Row 1 -->
+                <div class="tl-empty" style="grid-column:1; grid-row:1;">
+                    <img class="tl-empty-img-left" src="assets/img/vanakkam.png" />
+
+                </div>
+                <div class="tl-center" style="grid-row:1;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-right-cell" style="grid-row:1;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-1" data-modal-title="VANAKKAM" data-modal-desc=
+                        "The wedding day begins at dawn with the resonant sounds of the Nadaswaram and the Thavil. These two instruments are inseparable in Tamil temple and wedding music; their combined sound is considered supremely auspicious and signals that a sacred
+ event is underway.">
+                            <h3 >VANAKKAM</h3>
+                            <p data-i18n="tl-desc-1">An auspicious welcome.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="tl-left-cell" style="grid-row:2;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-2" data-modal-title="MAPPILAI ALAIPPU " data-modal-desc=
+                        "The groom arrives at the venue and is received by the bride's family. The Thozhan (the bride's brother) washes the groom's feet to formally welcomes him into the family. The groom gifts the Thozhan a gold ring in return. Two married women then perform Aalathi, circling a tray bearing a flame three times around the groom to ward off evil spirits and negativity. 
+The bride's father garlands the groom.
+                        ">
+                            <h3>MAPPILAI ALAIPPU </h3>
+                            <p data-i18n="tl-desc-2">Welcoming the groom.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-center" style="grid-row:2;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-empty" style="grid-column:3; grid-row:2;">
+                    <img style="width: 75%; top: -10px;"  class="tl-empty-img-right" src="assets/img/tolen.png" />
+
+                </div>
+                
+                <!-- Row 3 -->
+                <div class="tl-empty" style="grid-column:1; grid-row:3;">
+                    <img style="width: 80%" class="tl-empty-img-left" src="assets/img/aalathi.png" />
+
+                </div>
+                <div class="tl-center" style="grid-row:3;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-right-cell" style="grid-row:3;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-3" data-modal-title="AALATHI" data-modal-desc=
+                        "After the welcoming, the groom is accompanied by his family and groomsmen carrying decorated trays to the Manavarai (the ceremonial wedding stage) where the sacred fire has been prepared and the Iyer (priest) awaits. Throughout the ceremony, the priest chants Vedic and Saiva mantras.
+                        ">
+                            <h3>AALATHI</h3>
+                            <p data-i18n="tl-desc-3">Lighting of the lamp.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 4 -->
+                <div class="tl-left-cell" style="grid-row:4;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-4" data-modal-title="PILLAIYAR PUJAI" data-modal-desc=
+                        "The priest formally commences the ceremony by invoking Lord Ganesha (Pillaiyar), the remover of obstacles, to ensure the wedding proceeds without hindrance. Prayers are offered, and the sacred space is sanctified. This step marks the spiritual 'start' of all rites that follow.
+                        ">
+                            <h3>PILLAIYAR PUJAI</h3>
+                            <p data-i18n="tl-desc-4">Commencement of the ceremony.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-center" style="grid-row:4;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-empty" style="grid-column:3; grid-row:4;">
+                    <img class="tl-empty-img-right" src="assets/img/pillaiyar_pujai.png" />
+                </div>
+                
+                <!-- Row 5 -->
+                <div class="tl-empty" style="grid-column:1; grid-row:5;">
+                    <img style="    top: -9px;" class="tl-empty-img-left" src="assets/img/cappu.png" />
+
+                </div>
+                <div class="tl-center" style="grid-row:5;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-right-cell" style="grid-row:5;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-5" data-modal-title="KAPPU KATTU" data-modal-desc=
+                        "The groom undergoes a purification ritual:
+&lt;/li&gt;&lt;li&gt;He is given a Therpai (a ring made of darbha grass) to wear, symbolising mental purity and focus.
+&lt;/li&gt;&lt;li&gt;A saffron thread (kaapu) is tied around his right wrist by the priest, serving as spiritual protection against ill wishes and negative energy.
+                        ">
+                            <h3>KAPPU KATTU</h3>
+                            <p data-i18n="tl-desc-5">Purifying the groom.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 6 -->
+                <div class="tl-left-cell" style="grid-row:6;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-6" data-modal-title="MANAMAGAL VARUKA - KANNIKA THAANAM" data-modal-desc=
+                        "The bride enters the Manavarai, escorted by the Thozhi (the groom's sister or a female relative), her bridesmaids, and her family. She is seated to the right of the groom. The bride's parents formally give their daughter to the groom and his family. The groom promises to protect and cherish her throughout their life. 
+                        ">
+                            <h3>MANAMAGAL VARUKA - KANNIKA THAANAM</h3>
+                            <p data-i18n="tl-desc-6">Arrival of the bride & giving her away.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-center" style="grid-row:6;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-empty" style="grid-column:3; grid-row:6;">
+                    <img style="width: 60%; top: -5px;" class="tl-empty-img-right" src="assets/img/manamagal.png" />
+
+                </div>
+                
+                <!-- Row 7 -->
+                <div class="tl-empty" style="grid-column:1; grid-row:7;">
+                    <img style="    top: 17px;" class="tl-empty-img-left" src="assets/img/saree.png" />
+
+                </div>
+                <div class="tl-center" style="grid-row:7;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-right-cell" style="grid-row:7;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-7" data-modal-title="KOORAI SARI &amp; THALI" data-modal-desc=
+                        "The groom presents the bride with two sacred items:
+&lt;/li&gt;&lt;li&gt;Koorai Pudavai: the wedding saree, gifted by the groom's family.
+&lt;/li&gt;&lt;li&gt;Thali: the sacred gold pendant. It is the symbol of marriage.
+&#10;Both items are placed on a tray, blessed by the priest, and then circulated among the assembled guests so that everyone may touch them and impart their blessings. The bride then leaves the stage to change into the Koorai saree.
+">
+                            <h3>KOORAI SARI &amp; THALI</h3>
+                            <p data-i18n="tl-desc-7">Blessing the wedding sari and necklace.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 8 -->
+                <div class="tl-left-cell" style="grid-row:8;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-8" data-modal-title="THALI KATTU" data-modal-desc=
+                        "This is THE central moment of the entire wedding, the Muhurtham.
+The bride returns to the Manavarai in her Koorai saree, holding a garland for the groom. As the Nadaswaram reaches a dramatic crescendo (the Ketti Melam), the groom ties the Thali around the bride's neck with three knots. The groom applies Kungumam (red vermillion) to the bride's hair parting, signifying her married status. The couple exchanges garlands, typically three times, symbolising mutual acceptance. 
+The couple is declared husband and wife.
+">
+                            <h3>THALI KATTU</h3>
+                            <p data-i18n="tl-desc-8">Tying the sacred knot.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-center" style="grid-row:8;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-empty" style="grid-column:3; grid-row:8;">
+                    <img class="tl-empty-img-right" src="assets/img/thali.png" />
+
+                </div>
+                
+                <!-- Row 9 -->
+                <div class="tl-empty" style="grid-column:1; grid-row:9;">
+                    <img style="    top: 9px;" class="tl-empty-img-left" src="assets/img/saptapadi.png" />
+
+                </div>
+                <div class="tl-center" style="grid-row:9;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-right-cell" style="grid-row:9;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-9" data-modal-title="SAPTAPADI & AMMI MIDITHAL" data-modal-desc=
+                        "
+                        The newly married couple performs the Saptapadi, seven steps taken together. These steps represent the four purposes of life: Dharma (ethics), Artha (prosperity), Kama (love), and Moksha (spiritual liberation). After the seven steps, the groom leads the bride to the Ammi (a granite grinding stone). He places her right foot upon it, symbolising that their bond is as strong and unshakeable as stone. He then adorns each of her feet with a Metti (silver toe ring).
+                        ">
+                            <h3>SAPTAPADI & AMMI MIDITHAL</h3>
+                            <p data-i18n="tl-desc-9">The seven steps and toe-ring ceremony.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 10 -->
+                <div class="tl-left-cell" style="grid-row:10;">
+                    <div class="inner">
+                        <div class="tl-hline"></div>
+                        <div class="tl-dot-tip"></div>
+                        <div class="tl-content" data-i18n-modal-desc="tl-desc-full-10" data-modal-title="ASSERVATHAM &amp; VIDAI" data-modal-desc=
+                        "
+                        The ceremony concludes with a final Aalathi performed in front of the couple to dispel any remaining negativity and Asirvatham (blessings) with both of parents and then elders. A festive wedding feast (traditionally vegetarian, served on banana leaves) follows, marking the joyous conclusion.
+                        ">
+                            <h3>ASSERVATHAM &amp; VIDAI</h3>
+                            <p  data-i18n="tl-desc-10">Final blessings bride's farewell.</p>
+                            <button data-i18n="tl-desc-read" class="open-modal-btn">Read more</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-center" style="grid-row:10;">
+                    <div class="tl-dot-tip"></div>
+                </div>
+                <div class="tl-empty" style="grid-column:3; grid-row:10;">
+                    <img  style="width: 80%; top: 15px;" class="tl-empty-img-right" src="assets/img/vidai.png" />
+
+                </div>
+            </div>
+
+           
+        </div>
+        <div class="rcp-main">
+            <div class="rcp-main-title">
+                <h1 data-i18n="rcp-main-title">Wedding Reception</h1>
+            </div>
+            <!-- <div class="rcp-main-image">
+                <img src="assets/img/cadre_or.png"/>
+            </div> -->
+            <div class="rcp-main-text">
+                <h1>Priyangan & Nivertha</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem porro explicabo veniam iusto aperiam nam animi quaerat sapiente, fugit incidunt velit iste sint saepe iure quasi accusamus facere harum itaque.
+                </p>
+            </div> 
+        </div>
+            
+        <div class="superposed-2-images-section">
+            <div class="superposed-2-logo">
+                <img src="assets/img/bells.png"/>
+            </div>
+            <div class="superposed-2-container">
+                <!-- Logo centré au-dessus -->
+                
+                
+                <!-- 4 images superposées -->
+                <div class="superposed-2-grid">
+                    <!-- Image 1 - en haut à gauche -->
+                    <div class="superposed-2-item item-2-1">
+                        <img src="assets/img/env_2_back.png" alt="Image 1" />
+                    </div>
+                    
+                    <!-- Image 2 - en haut à droite -->
+                    <div class="superposed-2-item item-2-2">
+                        <div class="image-trigger" data-i18n-data-image="img-carte-reception" data-image="assets/img/carte-reception.png" style="cursor: pointer;">
+
+                            <img data-i18n-img="img-carte-reception" src="assets/img/carte-reception.png" alt="Carte"/>
+                        </div>
+                    </div>
+                    
+                    <!-- Image 3 - en bas à gauche -->
+                    <div class="superposed-2-item item-2-3">
+                        <img src="assets/img/fleur.png"/>
+                    </div>
+                    
+                    <div class="superposed-2-item item-2-4">
+                        <img src="assets/img/bague.png"/>
+                    </div>
+
+                    <div class="superposed-2-item item-2-5">
+                        <img src="assets/img/reception-pn.png"/>
+                    </div>
+                    <!-- Image 4 - en bas à droite -->
+                    <div class="superposed-2-item item-2-6">
+                        <img src="assets/img/env_2_front.png" alt="Image 6" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ct-rcp-section" data-i18n-bg="img-ct-rcp-bg">
+            <div class="ct-rcp-deco">
+            </div>
+            <!-- <div class="ct-rcp-title">
+                <h1>Count Down</h1>
+            </div> -->
+            <div class="ct-rcp-content">
+                <div class="ct-rcp-days">
+                    <h1 id="ct-rcp-h1-days"> -- </h1>
+                    <p data-i18n="cd-days">days</p>
+                </div>
+                <div class="ct-rcp-hours">
+                    <h1 id="ct-rcp-h1-hours"> -- </h1>
+                    <p data-i18n="cd-hours">hours</p>
+                </div>
+                <div class="ct-rcp-mins">
+                    <h1 id="ct-rcp-h1-mins"> -- </h1>
+                    <p data-i18n="cd-minutes">minutes</p>
+                </div>
+                <div class="ct-rcp-secs">
+                    <h1 id="ct-rcp-h1-secs"> -- </h1>
+                    <p data-i18n="cd-secondes">secondes</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="rec-place-section">
+            <div class="rec-place-title"> 
+                <h1 data-i18n="rel-place-title">About the place</h1>
+            </div>
+            <div class="rec-place-image">
+                <img src="assets/img/espace_eden.jpeg"/>
+            </div>
+            <div class="rec-place-desc">
+                <h1 data-i18n="rel-place-desc" class="rec-place-desc-title">
+                    La céremonie
+                </h1>
+                <p class="rec-place-desc-adresse">
+                    ESPACE EDEN
+                    <br>
+                    2 Rue de l'Industrie
+                    <br>
+                    77270 Villeparisis
+                </p>
+                <img class="rec-place-desc-img" src="assets/img/fleur.png"/>
+                
+            </div>      
+            <div class="rec-place-dress-code">
+                <h1 data-i18n="rel-place-dress-code" class="rec-place-dress-code-title">Dress code</h1>
+                <p data-i18n="rcp-place-dress-code-desc" class="rec-place-dress-code-desc">
+                    Electro Chic. We invite you to wear bold and vibrant colors from our palette. bright, striking tones to create an energetic and unforgettable atmosphere.
+                </p>
+                    <div class="rec-place-colors">
+                    <span class="rec-color-code-1"></span>
+                    <span class="rec-color-code-2"></span>
+                    <span class="rec-color-code-3"></span>
+                    <span class="rec-color-code-4"></span>
+                    <span class="rec-color-code-5"></span>
+            </div>
+            </div>
+            
+        </div>
+
+        <div class="custom-timeline-wrap">
+            <div class="custom-timeline-deco">
+                <img class="custom-timeline-deco-1" src="assets/img/deco-fleur.png"/>
+            </div>
+            <h2 data-i18n="tl-title" class="custom-timeline-title">Timeline</h2>
+            
+            <div class="custom-timeline-grid">
+                <div class="custom-tl-vline"></div>
+                
+                <!-- Élément 1 - Gauche -->
+                <div class="custom-tl-row">
+                    <div class="custom-tl-left">
+                        <div class="custom-tl-image-wrapper">
+                            <img src="assets/img/bride_groom.png" alt="Étape 1" class="custom-tl-img" />
+                        </div>
+                        <div class="custom-tl-text">
+                            <h3 data-i18n="custom-tl-1-heure">6:00 Pm</h3>
+                            <p data-i18n="custom-tl-1-desc">Entry of the bride and groom</p>
+                        </div>
+                        <div class="custom-tl-connector"></div>
+                    </div>
+                    <div class="custom-tl-center">
+                        <img style="
+                                        transform: rotate(-15deg);
+                                    "
+                        src="assets/img/coeur.png" alt="coeur" class="custom-tl-heart" />
+                    </div>
+                    <div class="custom-tl-right-empty"></div>
+                </div>
+                
+                <!-- Élément 2 - Droite -->
+                <div class="custom-tl-row">
+                    <div class="custom-tl-left-empty"></div>
+                    <div class="custom-tl-center">
+                        <img style="
+                                        transform: rotate(15deg);
+                                    " src="assets/img/coeur.png" alt="coeur" class="custom-tl-heart" />
+                    </div>
+                    <div class="custom-tl-right">
+                        <div class="custom-tl-connector"></div>
+                        <div class="custom-tl-image-wrapper">
+                            <img src="assets/img/cake.png" alt="Étape 2" class="custom-tl-img" />
+                        </div>
+                        <div class="custom-tl-text">
+                            <h3 data-i18n="custom-tl-2-heure">7:00 Pm</h3>
+                            <p data-i18n="custom-tl-2-desc">CAKE <br> CUTTING</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Élément 3 - Gauche -->
+                <div class="custom-tl-row">
+                    <div class="custom-tl-left">
+                        <div class="custom-tl-image-wrapper">
+                            <img src="assets/img/photo.png" alt="Étape 3" class="custom-tl-img" />
+                        </div>
+                        <div class="custom-tl-text">
+                            <h3 data-i18n="custom-tl-3-heure">7:30 pm</h3>
+                            <p data-i18n="custom-tl-3-desc">FAMILY & <br> friends PHOTO</p>
+                        </div>
+                        <div class="custom-tl-connector"></div>
+                    </div>
+                    <div class="custom-tl-center">
+                        <img style="
+                                        transform: rotate(-15deg);
+                                    "
+                                     src="assets/img/coeur.png" alt="coeur" class="custom-tl-heart" />
+                    </div>
+                    <div class="custom-tl-right-empty"></div>
+                </div>
+                
+                <!-- Élément 4 - Droite -->
+                <div class="custom-tl-row">
+                    <div class="custom-tl-left-empty"></div>
+                    <div class="custom-tl-center">
+                        <img style="
+                                        transform: rotate(15deg);
+                                    "
+                                    src="assets/img/coeur.png" alt="coeur" class="custom-tl-heart" />
+                    </div>
+                    <div class="custom-tl-right">
+                        <div class="custom-tl-connector"></div>
+                        <div class="custom-tl-image-wrapper">
+                            <img src="assets/img/eat.png" alt="Étape 4" class="custom-tl-img" />
+                        </div>
+                        <div class="custom-tl-text">
+                            <h3 data-i18n="custom-tl-4-heure">8:30 Pm</h3>
+                            <p data-i18n="custom-tl-4-desc">dinner <br> served</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Élément 5 - Gauche -->
+                <div class="custom-tl-row">
+                    <div class="custom-tl-left">
+                        <div class="custom-tl-image-wrapper">
+                            <img src="assets/img/festifities.png" alt="Étape 5" class="custom-tl-img" />
+                        </div>
+                        <div class="custom-tl-text">
+                            <h3 data-i18n="custom-tl-5-heure">9:00 pm</h3>
+                            <p data-i18n="custom-tl-5-desc">festifities <br> continue</p>
+                        </div>
+                        <div class="custom-tl-connector"></div>
+                    </div>
+                    <div class="custom-tl-center">
+                        <img style="
+                                        transform: rotate(-15deg);
+                                    "
+                                    src="assets/img/coeur.png" alt="coeur" class="custom-tl-heart" />
+                    </div>
+                    <div class="custom-tl-right-empty"></div>
+                </div>
+                
+                <!-- Élément 6 - Droite -->
+                <div class="custom-tl-row">
+                    <div class="custom-tl-left-empty"></div>
+                    <div class="custom-tl-center">
+                        <img style="
+                                        transform: rotate(15deg);
+                                    "
+                                    src="assets/img/coeur.png" alt="coeur" class="custom-tl-heart" />
+                    </div>
+                    <div class="custom-tl-right">
+                        <div class="custom-tl-connector"></div>
+                        <div class="custom-tl-image-wrapper">
+                            <img src="assets/img/dance.png" alt="Étape 6" class="custom-tl-img" />
+                        </div>
+                        <div class="custom-tl-text">
+                            <h3 data-i18n="custom-tl-6-heure">10:00 Pm</h3>
+                            <p data-i18n="custom-tl-6-desc">sOLO dANCE</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Élément 7 - Gauche -->
+                <div class="custom-tl-row">
+                    <div class="custom-tl-left">
+                        <div class="custom-tl-image-wrapper">
+                            <img src="assets/img/party.png" alt="Étape 7" class="custom-tl-img" />
+                        </div>
+                        <div class="custom-tl-text">
+                            <h3 data-i18n="custom-tl-7-heure">10:30 pm</h3>
+                            <p data-i18n="custom-tl-7-desc">night Party</p>
+                        </div>
+                        <div class="custom-tl-connector"></div>
+                    </div>
+                    <div class="custom-tl-center">
+                        <img style="
+                                        transform: rotate(-15deg);
+                                    "
+                                     src="assets/img/coeur.png" alt="coeur" class="custom-tl-heart" />
+                    </div>
+                    <div class="custom-tl-right-empty"></div>
+                </div>
+            </div>
+        </div>
+<!-- 
+        </div>
+    </div> -->
+
+        <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
+            <div class="modal-inner" role="dialog" aria-modal="true">
+                <img src="assets/img/card.png" class="modal-bg-img" />
+                <div class="tl-modal-text-container">
+                    <h3 class="tl-modal-title" id="modal-title"></h3>
+                    <p class="tl-modal-desc" id="modal-desc"></p>
+                    <button id="close-modal" class="modal-btn">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="image-modal-overlay" class="modal-overlay image-modal-overlay" aria-hidden="true">
+            <div class="modal-inner image-modal-inner" role="dialog" aria-modal="true">
+                <button id="close-image-modal" class="image-modal-close-btn">✕</button>
+                <img id="modal-image" src="" alt="" class="modal-image-content" />
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollSmoother.min.js"></script>
+        <script src="https://unpkg.com/split-type"></script>
+        <script src="js/loader.js"></script>
+        <script src="js/animation.js"></script>
+        <script src="js/language.js"></script>
+        <script src="js/countdown.js"></script>
+    </body>
+</html>

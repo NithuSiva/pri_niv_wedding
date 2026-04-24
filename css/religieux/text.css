@@ -1,0 +1,56 @@
+.cd-days-num, .cd-hours-num, .cd-mins-num, .cd-secs-num {
+    font-family:  wagon-bold;
+    color: var(--bg-main);
+    width: 100%;
+    height: 100%;
+ 
+}
+
+.cd-days, .cd-hours, .cd-mins, .cd-secs {
+    font-family:  wagon-light;
+    color: var(--bg-main);
+    width: 100%;
+    height: 100%;
+  
+}
+ 
+.cd-title > span{
+    letter-spacing: 15px;
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    font-family: moglandemo;
+}
+
+.cd-days > span {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-family: moglandemo;
+}
+.cd-hours > span {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-family: moglandemo;
+}
+.cd-mins > span {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-family: moglandemo;
+}
+.cd-secs > span {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-family: moglandemo;
+}
+
+.cd-days-num {
+    font-size: clamp(6rem, 50vw, 6rem);
+    font-family: wagon-bold;
+}
+.cd-hours-num {
+    font-size: clamp(6rem, 50vw, 6rem);
+    font-family: wagon-bold;
+}
+.cd-mins-num {
+    font-size: clamp(6rem, 50vw, 6rem);
+    font-family: wagon-bold;
+}
+.cd-secs-num {
+    font-size: clamp(6rem, 50vw, 6rem);
+    font-family: wagon-bold;
+}
+ 
