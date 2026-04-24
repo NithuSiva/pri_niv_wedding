@@ -1271,7 +1271,7 @@ perspective: 1000px;
 
     display: grid;
 grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(10, 1fr);
+grid-template-rows: repeat(6, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
@@ -1297,8 +1297,13 @@ grid-row-gap: 0px;
     height: auto;
 }
 .rcp-main-text {
-     grid-area: 9 / 1 / 11 / 6; 
-
+    grid-area: 2 / 1 / 6 / 6;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 

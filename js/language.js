@@ -143,6 +143,7 @@ const translations = {
     "rel-place-dress-code": "Code vestimentaire",
     "rel-place-dress-code-desc": "Tradition Intemporelle. Nous vous invitons à porter votre plus belle tenue traditionnelle dans une palette de blanc cassé, doré et vert feuillage.",
     "rcp-place-dress-code-desc": "Électro Chic. Nous vous invitons à porter des couleurs vives et audacieuses de notre palette. Des teintes éclatantes et saisissantes pour créer une atmosphère énergique et inoubliable.",
+    "rcp-main-desc" : "Nous sommes ravis de vous accueillir pour célébrer notre union lors d'une soirée de réception inoubliable.<br>Rejoignez-nous pour partager un moment de joie, de danse et de festivités. Une soirée placée sous le signe de l'élégance et de la bonne humeur vous attend, rythmée par la découpe du gâteau, un dîner savoureux et de nombreuses surprises jusqu'au bout de la nuit.",
 
     "tl-title": "Programme",
     "tl-desc-read": "Lire plus",
@@ -206,6 +207,7 @@ const translations = {
     "rel-place-dress-code": "Dress code",
     "rel-place-dress-code-desc": "Timeless Tradition. We invite you to wear your finest traditional attire in a palette of off-white, gold, and foliage green.",
     "rcp-place-dress-code-desc": "Electro Chic. We invite you to wear bold and vibrant colors from our palette. bright, striking tones to create an energetic and unforgettable atmosphere.",
+    "rcp-main-desc" : "We are delighted to welcome you to celebrate our union during an unforgettable reception evening.<br>Join us to share a moment of joy, dance, and festivities. An evening of elegance and good cheer awaits you, with cake cutting, a delicious dinner, and many surprises until the end of the night.",
 
     "tl-title": "Timeline",
     "tl-desc-read" : "Read more",
@@ -275,7 +277,9 @@ const translations = {
     "rel-place-dress-code": "உடை நெறிமுறை",
     "rel-place-dress-code-desc": "நிலையான பாரம்பரியம். வெண்மை, தங்கம் மற்றும் பச்சை நிற தாவர நிறங்களில் உங்கள் சிறந்த பாரம்பரிய உடையை அணிய அழைக்கிறோம்.",
     "rcp-place-dress-code-desc": "எலக்ட்ரோ சிக். தைரியமான மற்றும் துடிப்பான நிறங்களை அணிய அழைக்கிறோம். ஆற்றல் மிக்க மற்றும் மறக்கமுடியாத சூழலை உருவாக்க பிரகாசமான, கண்கவர் தொனிகள்.",
-
+    "rcp-main-desc" : "எங்கள் திருமண வரவேற்பின் மறக்க முடியாத மாலை நிகழ்வில் உங்களை வரவேற்பதில் பெருமகிழ்ச்சி அடைகிறோம்.<br>மகிழ்ச்சி, நடனம் மற்றும் கொண்டாட்டங்கள் நிறைந்த இந்த தருணத்தை எங்களுடன் பகிர்ந்து கொள்ள வாருங்கள். கேக் வெட்டுதல், சுவையான இரவு உணவு மற்றும் இரவு முழுவதும் பல ஆச்சரியங்களுடன் கூடிய நேர்த்தியான மற்றும் மகிழ்ச்சியான மாலை உங்களுக்காக காத்திருக்கிறது.",
+    
+    
     "tl-title": "நிகழ்ச்சி நிரல்",
     "tl-desc-read": "மேலும் படிக்க",
     "tl-desc-full-1": "திருமண நாள் விடியலில் நாதஸ்வரம் மற்றும் தவிலின் ஒலியுடன் தொடங்குகிறது. இந்த இரண்டு கருவிகளும் தமிழ் கோயில் மற்றும் திருமண இசையில் பிரிக்கமுடியாதவை; அவற்றின் இணைந்த ஒலி மிகவும் மங்களகரமானதாகக் கருதப்படுகிறது மற்றும் ஒரு புனித நிகழ்வு நடைபெறுகிறது என்பதை அறிவிக்கிறது.",

@@ -226,6 +226,19 @@
     margin-bottom: 2rem;
 }
 
+.rcp-main-text > p {
+    width: 100%;
+    text-align: center;
+    font-family: wagon-light-italic;
+    font-size: clamp(1rem, 10vw, 0.8rem);
+    font-weight: normal;
+    padding-top: 2rem;
+    color: #E7D7C0;
+    margin-bottom: 2rem;
+    width: 80vw;
+    line-height: 1.8rem;
+}
+
 
 .ct-rcp-title > h1 {
     width: 100%;
