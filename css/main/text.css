@@ -1,33 +1,25 @@
-.language-title > span {
+.lang-screen__title > span {
     color: var(--txt-color);
     font-family: moglandemo;
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
 }
 
-.language-title > .bold-text {
+.lang-screen__title > .lang-screen__title-bold {
     font-size: clamp(2rem, 100vw, 3rem);
 }
 
-.language-title > .regular-text {
+.lang-screen__title > .lang-screen__title-regular {
     font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
-
-.language-title > span {
-    color: var(--txt-color);
-    font-size: clamp(1.7rem, 7vw, 2.2rem);
-    font-family: moglandemo;
-}
-
-
-.language-box > span {
+.lang-screen__btn > span {
     color: var(--txt-color);
     font-family: moglandemo;
     font-size: clamp(1.7rem, 7vw, 2.2rem);
-
 }
 
-.main-title > h1 {
-     width: 100%;
+.main__title > h1 {
+    width: 100%;
     text-align: center;
     font-family: betmo-regular;
     font-size: clamp(2rem, 10vw, 4rem);
@@ -36,52 +28,27 @@
     color: #E7D7C0;
     margin-bottom: 2rem;
     z-index: 1;
-
 }
 
-
-.main-desc > span {
+.main__desc > span {
     width: 100%;
     text-align: center;
-    
     font-family: wagon-light-italic;
     font-size: clamp(1.2rem, 50vw, 1.5rem);
     color: #E7D7C0;
     opacity: 90%;
 }
 
-.ct-title > h1 {
+.countdown-hindu__title > h1 {
     width: 100%;
     text-align: center;
     color: #E7D7C0;
     font-family: betmo-regular;
     font-size: clamp(2rem, 18vw, 8rem);
     font-weight: normal;
-
 }
 
-#ct-h1-days {
-    width: 100%;
-    text-align: center;
-    color: #E7D7C0;
-    font-family: wagon-light-italic;
-    font-size: clamp(2rem, 15vw, 6rem);
-}
-#ct-h1-hours {
-    width: 100%;
-    text-align: center;
-    color: #E7D7C0;
-    font-family: wagon-light-italic;
-    font-size: clamp(2rem, 15vw, 6rem);
-}
-#ct-h1-mins {
-    width: 100%;
-    text-align: center;
-    color: #E7D7C0;
-    font-family: wagon-light-italic;
-    font-size: clamp(2rem, 15vw, 6rem);
-}
-#ct-h1-secs {
+#countdown-hindu-days {
     width: 100%;
     text-align: center;
     color: #E7D7C0;
@@ -89,7 +56,31 @@
     font-size: clamp(2rem, 15vw, 6rem);
 }
 
-.ct-content > div > p {
+#countdown-hindu-hours {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: wagon-light-italic;
+    font-size: clamp(2rem, 15vw, 6rem);
+}
+
+#countdown-hindu-mins {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: wagon-light-italic;
+    font-size: clamp(2rem, 15vw, 6rem);
+}
+
+#countdown-hindu-secs {
+    width: 100%;
+    text-align: center;
+    color: #E7D7C0;
+    font-family: wagon-light-italic;
+    font-size: clamp(2rem, 15vw, 6rem);
+}
+
+.countdown-hindu__content > div > p {
     width: 100%;
     text-align: center;
     color: #E7D7C0;
@@ -97,15 +88,13 @@
     font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
-.info-desc {
+.infos__desc {
     text-align: center;
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
-
     font-family: wagon-light-italic;
     font-size: clamp(1.1rem, 50vw, 1.3rem);
-
     color: #E7D7C0;
     opacity: 90%;
 }
@@ -119,7 +108,8 @@
     font-weight: normal;
 }
 
-.rel-place-desc-title, .rel-place-dress-code-title {
+.rel-place-desc-title,
+.rel-place-dress-code-title {
     width: 100%;
     text-align: center;
     color: #730f0f;
@@ -127,7 +117,6 @@
     font-size: clamp(2rem, 18vw, 3rem);
     font-weight: normal;
 }
-
 
 .rel-place-desc-adresse {
     text-align: center;
@@ -137,9 +126,6 @@
     color: #730f0f;
     opacity: 90%;
 }
-
-
-
 
 .rel-place-dress-code-desc {
     text-align: center;
@@ -170,8 +156,8 @@
     opacity: 90%;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-
 }
+
 .tl-content > p {
     margin: 0;
     width: 100%;
@@ -180,19 +166,18 @@
     color: #E7D7C0;
     opacity: 90%;
     line-height: 1.4;
-
 }
 
-.tl-modal-title, .tl-modal-desc {
-  
+.modal__title,
+.modal__desc {
     color: #730f0f;
     font-family: wagon-light-italic;
     font-size: clamp(0.5rem, 60vw, 1.2rem);
-
-
+    height: 35vh;
+    overflow: scroll;
 }
 
-.tl-modal-title {
+.modal__title {
     margin-bottom: 10px;
 }
 
@@ -201,7 +186,6 @@
     font-family: wagon-light-italic;
     font-size: clamp(0.5rem, 60vw, 0.8rem);
 }
-
 
 .rcp-main-title > h1 {
     width: 100%;
@@ -213,7 +197,6 @@
     color: #E7D7C0;
     margin-bottom: 2rem;
 }
-
 
 .rcp-main-text > h1 {
     width: 100%;
@@ -239,39 +222,7 @@
     line-height: 1.8rem;
 }
 
-
-.ct-rcp-title > h1 {
-    width: 100%;
-    text-align: center;
-    color: #faf6f1;
-    font-family: betmo-regular;
-    font-size: clamp(2rem, 25vw, 8rem);
-    font-weight: normal;
-
-}
-
-#ct-rcp-h1-days {
-    width: 100%;
-    text-align: center;
-    color: #faf6f1;
-    font-family: betmo-regular;
-    font-size: clamp(2rem, 13vw, 6rem);
-}
-#ct-rcp-h1-hours {
-    width: 100%;
-    text-align: center;
-    color: #faf6f1;
-    font-family: betmo-regular;
-    font-size: clamp(2rem, 13vw, 6rem);
-}
-#ct-rcp-h1-mins {
-    width: 100%;
-    text-align: center;
-    color: #faf6f1;
-    font-family: betmo-regular;
-    font-size: clamp(2rem, 13vw, 6rem);
-}
-#ct-rcp-h1-secs {
+#countdown-rcp-days {
     width: 100%;
     text-align: center;
     color: #faf6f1;
@@ -279,11 +230,35 @@
     font-size: clamp(2rem, 13vw, 6rem);
 }
 
-.ct-rcp-content > div > p {
+#countdown-rcp-hours {
     width: 100%;
     text-align: center;
     color: #faf6f1;
-    font-family:  wagon-light-italic ;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 13vw, 6rem);
+}
+
+#countdown-rcp-mins {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 13vw, 6rem);
+}
+
+#countdown-rcp-secs {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family: betmo-regular;
+    font-size: clamp(2rem, 13vw, 6rem);
+}
+
+.countdown-rcp__content > div > p {
+    width: 100%;
+    text-align: center;
+    color: #faf6f1;
+    font-family: wagon-light-italic;
     font-size: clamp(1.5rem, 6vw, 3rem);
 }
 
@@ -297,7 +272,8 @@
     z-index: 2;
 }
 
-.rec-place-desc-title, .rec-place-dress-code-title {
+.rec-place-desc-title,
+.rec-place-dress-code-title {
     width: 100%;
     text-align: center;
     color: #6b1fad;
@@ -306,7 +282,6 @@
     font-weight: normal;
     z-index: 2;
 }
-
 
 .rec-place-desc-adresse {
     text-align: center;
@@ -318,9 +293,6 @@
     z-index: 2;
 }
 
-
-
-
 .rec-place-dress-code-desc {
     text-align: center;
     width: 100%;
@@ -329,7 +301,6 @@
     font-size: clamp(0.7rem, 40vw, 1.3rem);
     color: #6b1fad;
 }
-
 
 .custom-timeline-title {
     text-align: center;
@@ -341,14 +312,12 @@
     padding-top: 50px;
 }
 
-
 .custom-tl-right .custom-tl-text {
     text-align: left;
 }
 
 .custom-tl-right .custom-tl-text h3 {
     color: #000000;
-    margin: 0;
     margin: 0 0 2px;
     width: 100%;
     font-family: wagon-light;
@@ -356,12 +325,10 @@
     opacity: 90%;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    
 }
 
 .custom-tl-right .custom-tl-text p {
     color: #000000;
-    margin: 0;
     margin: 0 0 2px;
     width: 100%;
     font-family: wagon-light;
@@ -371,15 +338,13 @@
     text-transform: uppercase;
 }
 
-
 .custom-tl-left .custom-tl-text {
     text-align: right;
-    order: 1; /* Texte à gauche de l'image */
+    order: 1;
 }
 
 .custom-tl-left .custom-tl-text h3 {
     color: #000000;
-    margin: 0;
     margin: 0 0 2px;
     width: 100%;
     font-family: wagon-light;
@@ -387,11 +352,10 @@
     opacity: 90%;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    
 }
+
 .custom-tl-left .custom-tl-text p {
-        color: #000000;
-    margin: 0;
+    color: #000000;
     margin: 0 0 2px;
     width: 100%;
     font-family: wagon-light;
@@ -402,38 +366,37 @@
 }
 
 
-/* Surcharge pour le tamoul */
-html.lang-ta .language-title > span,
-html.lang-ta .language-title > .bold-text,
-html.lang-ta .language-title > .regular-text,
-html.lang-ta .language-box > span {
+html.lang-ta .lang-screen__title > span,
+html.lang-ta .lang-screen__title > .lang-screen__title-bold,
+html.lang-ta .lang-screen__title > .lang-screen__title-regular,
+html.lang-ta .lang-screen__btn > span {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta .main-title > h1 {
+html.lang-ta .main__title > h1 {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta .main-desc > span {
+html.lang-ta .main__desc > span {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta .ct-title > h1 {
+html.lang-ta .countdown-hindu__title > h1 {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta #ct-h1-days,
-html.lang-ta #ct-h1-hours,
-html.lang-ta #ct-h1-mins,
-html.lang-ta #ct-h1-secs {
+html.lang-ta #countdown-hindu-days,
+html.lang-ta #countdown-hindu-hours,
+html.lang-ta #countdown-hindu-mins,
+html.lang-ta #countdown-hindu-secs {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta .ct-content > div > p {
+html.lang-ta .countdown-hindu__content > div > p {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta .info-desc {
+html.lang-ta .infos__desc {
     font-family: 'tamil-normal', serif;
 }
 
@@ -463,8 +426,8 @@ html.lang-ta .tl-content > p {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta .tl-modal-title,
-html.lang-ta .tl-modal-desc {
+html.lang-ta .modal__title,
+html.lang-ta .modal__desc {
     font-family: 'tamil-normal', serif;
 }
 
@@ -480,18 +443,14 @@ html.lang-ta .rcp-main-text > h1 {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta .ct-rcp-title > h1 {
+html.lang-ta #countdown-rcp-days,
+html.lang-ta #countdown-rcp-hours,
+html.lang-ta #countdown-rcp-mins,
+html.lang-ta #countdown-rcp-secs {
     font-family: 'tamil-normal', serif;
 }
 
-html.lang-ta #ct-rcp-h1-days,
-html.lang-ta #ct-rcp-h1-hours,
-html.lang-ta #ct-rcp-h1-mins,
-html.lang-ta #ct-rcp-h1-secs {
-    font-family: 'tamil-normal', serif;
-}
-
-html.lang-ta .ct-rcp-content > div > p {
+html.lang-ta .countdown-rcp__content > div > p {
     font-family: 'tamil-normal', serif;
 }
 
@@ -521,6 +480,48 @@ html.lang-ta .custom-tl-right .custom-tl-text p,
 html.lang-ta .custom-tl-left .custom-tl-text h3,
 html.lang-ta .custom-tl-left .custom-tl-text p {
     font-family: 'tamil-normal', serif;
-    text-transform: none; /* Enlever les majuscules pour le tamoul */
-    letter-spacing: 0; /* Réduire l'espacement des lettres */
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+
+/* Titre countdown en Tamil */
+html.lang-ta .countdown-hindu__title > h1,
+html.lang-ta .countdown-rcp .countdown-rcp__content > div > p,
+html.lang-ta .custom-timeline-title {
+    font-size: clamp(1.5rem, 10vw, 2.5rem) !important;
+}
+
+/* Chiffres des countdowns en Tamil (jours, heures, minutes, secondes) */
+html.lang-ta #countdown-hindu-days,
+html.lang-ta #countdown-hindu-hours,
+html.lang-ta #countdown-hindu-mins,
+html.lang-ta #countdown-hindu-secs,
+html.lang-ta #countdown-rcp-days,
+html.lang-ta #countdown-rcp-hours,
+html.lang-ta #countdown-rcp-mins,
+html.lang-ta #countdown-rcp-secs {
+    font-size: clamp(1.5rem, 10vw, 3rem) !important;
+}
+
+/* Labels des countdowns en Tamil (jours, heures, minutes, secondes) */
+html.lang-ta .countdown-hindu__content > div > p,
+html.lang-ta .countdown-rcp__content > div > p {
+    font-size: clamp(0.8rem, 4vw, 1.2rem) !important;
+}
+
+/* Titre "Count Down" en Tamil */
+html.lang-ta .countdown-hindu__title > h1 {
+    font-size: clamp(1.5rem, 8vw, 2rem) !important;
+}
+
+/* Description de la modale en Tamil */
+html.lang-ta .modal__desc {
+    font-size: clamp(0.8rem, 4vw, 1rem) !important;
+    line-height: 1.5 !important;
+}
+
+/* Titre de la modale en Tamil */
+html.lang-ta .modal__title {
+    font-size: clamp(1rem, 5vw, 1.3rem) !important;
 }

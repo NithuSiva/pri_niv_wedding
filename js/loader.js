@@ -1,18 +1,19 @@
+
 function initLoader(callback) {
-    const loader = document.getElementById('loader');
-    const loaderBar = document.getElementById('loader__bar');
+    const loaderOverlay = document.getElementById('loader-overlay');
+    const loaderBar = document.getElementById('loader-bar');
     
-    if (!loader) {
+    if (!loaderOverlay) {
         if (callback) callback();
         return;
     }
     
-    loader.classList.remove('hidden');
+    loaderOverlay.classList.remove('hidden');
     if (loaderBar) loaderBar.style.width = '0%';
     
     const images = Array.from(document.images);
     const videos = Array.from(document.querySelectorAll('video'));
-    const contentImages = images.filter(img => !img.closest('.loader'));
+    const contentImages = images.filter(img => !img.closest('#loader-overlay'));
     const totalAssets = contentImages.length + videos.length;
     
     let loadedAssets = 0;
@@ -45,31 +46,33 @@ function initLoader(callback) {
     
     function hideLoader() {
         setTimeout(() => {
-            if (loader) loader.classList.add('hidden');
+            if (loaderOverlay) loaderOverlay.classList.add('hidden');
             document.body.style.overflow = '';
             if (callback) callback();
         }, 400);
     }
     
-    // Chargement des polices avec l'API standard
-    document.fonts.ready.then(() => {
-        console.log('✅ Toutes les polices sont chargées');
+    // Chargement des polices
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+            fontsReady = true;
+            updateProgress();
+            checkAllLoaded();
+        });
+    } else {
         fontsReady = true;
         updateProgress();
-        checkAllLoaded();
-    });
+    }
     
-    // Timeout de sécurité pour les polices
+    // Timeout de sécurité
     setTimeout(() => {
         if (!fontsReady) {
-            console.warn('⚠️ Timeout des polices');
             fontsReady = true;
             updateProgress();
             checkAllLoaded();
         }
     }, 4000);
     
-    // Chargement des médias
     if (totalAssets === 0) {
         updateProgress();
         checkAllLoaded();
@@ -94,7 +97,6 @@ function initLoader(callback) {
     }
     
     updateProgress();
-    console.log(`📦 Loader - ${totalAssets} médias, polices en attente...`);
 }
 
 window.initLoader = initLoader;

@@ -1,358 +1,442 @@
-
-// --- Loader ---
-const loader = document.getElementById('loader');
-const loaderBar = document.getElementById('loader__bar');
- 
-const images = Array.from(document.images);
-const videos = Array.from(document.querySelectorAll('video'));
-const total = images.length + videos.length;
-let loaded = 0;
- 
-function onAssetLoaded() {
-    loaded++;
-    const progress = total > 0 ? (loaded / total) * 100 : 100;
-    if (loaderBar) loaderBar.style.width = progress + '%';
-    if (loaded >= total) hideLoader();
-}
- 
-function hideLoader() {
-    setTimeout(() => {
-        if (loader) loader.classList.add('hidden');
-        document.body.style.overflow = '';
-    }, 400);
-}
- 
-if (total === 0) {
-    hideLoader();
-} else {
-    document.body.style.overflow = 'hidden';
-    images.forEach(img => {
-        if (img.complete) onAssetLoaded();
-        else {
-            img.addEventListener('load', onAssetLoaded);
-            img.addEventListener('error', onAssetLoaded);
-        }
-    });
-    videos.forEach(video => {
-        if (video.readyState >= 3) onAssetLoaded();
-        else {
-            video.addEventListener('canplay', onAssetLoaded, { once: true });
-            video.addEventListener('error', onAssetLoaded, { once: true });
-        }
-    });
-}
-
-// TIME LINE ANIMATION 
-
-
-
-// MODAL
-
-gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.config({
-    ignoreMobileResize: true   // ← clé : ignore les resize dus à la barre d'adresse Android
-});
-
-
-
-function updateVline() {
-    const tl_left = document.querySelectorAll('.custom-tl-left');
-    const vline = document.querySelector('.custom-tl-vline');
-    if (!tl_left.length && !vline ) return;
-
-    const tl_left_first = tl_left[0].getBoundingClientRect();
-    const tl_left_last = tl_left[tl_left.length - 1].getBoundingClientRect();
-    console.log("tl_left_first :", tl_left_first.height / 2 )
-    const top =  tl_left_first.height / 2;
-    const bottom = tl_left_last.height / 2;
-
-    vline.style.top = top + 'px';
-    vline.style.bottom = bottom + 'px';
-}
-
-
-window.addEventListener('load', updateVline);
-window.addEventListener('resize', updateVline);
+// animation.js - Version corrigée avec gestion du DOM ready et resize
 
 document.addEventListener("DOMContentLoaded", () => {
-
     
-    
-      // ========== MODALE TEXTE (existante) ==========
-    const overlay = document.getElementById('modal-overlay');
+    // ========== MODALE TEXTE ==========
+    const modalOverlay = document.getElementById('modal-overlay');
     const modalTitle = document.getElementById('modal-title');
     const modalDesc = document.getElementById('modal-desc');
-    const closeBtn = document.getElementById('close-modal');
+    const closeModalBtn = document.getElementById('modal-close-btn');
+    const modalInner = document.querySelector('.modal__inner');
+    const modalBgImg = document.querySelector('.modal__bg-img');
+    const modalTextWrap = document.querySelector('.modal__text-wrap');
 
-    document.querySelectorAll('.open-modal-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const content = btn.closest('.tl-content');
-            modalTitle.textContent = content.dataset.modalTitle || '';
-            modalDesc.textContent = content.dataset.modalDesc || '';
-
-            // Décoder le HTML si nécessaire
-            let desc = content.dataset.modalDesc || '';
-            // 1. D'abord, décoder TOUJOURS le HTML s'il y a des entités
-            if (desc.includes('&lt;') || desc.includes('&gt;') || desc.includes('&amp;')) {
-                const textarea = document.createElement('textarea');
-                textarea.innerHTML = desc;
-                desc = textarea.value;
-            }
-
-            // 2. Ensuite, gérer les &#10; qui restent
-            if (desc.includes('&#10;')) {
-                desc = desc.replace(/&#10;\s*&#10;/g, '</p><p>');
-                desc = desc.replace(/&#10;/g, '<br>');
-                desc = '<p>' + desc + '</p>';
-            }
-            // Utiliser innerHTML pour interpréter les balises
-            modalDesc.innerHTML = desc;
-
-
-            openModal();
-        });
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeModal();
-    });
-
-    // ========== MODALE IMAGE (nouvelle) ==========
-    const imageOverlay = document.getElementById('image-modal-overlay');
-    const modalImage = document.getElementById('modal-image');
-    const closeImageBtn = document.getElementById('close-image-modal');
-
-    // Fonction globale pour ouvrir une image
-    window.openImage = function(imageSrc) {
-        modalImage.src = imageSrc;
-        openImageModal();
-    };
-
-    closeImageBtn.addEventListener('click', closeImageModal);
-
-    imageOverlay.addEventListener('click', (e) => {
-        if (e.target === imageOverlay) closeImageModal();
-    });
-
-    // Fermeture avec Escape (gère les deux modales)
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (overlay.classList.contains('is-open')) {
-                closeModal();
-            }
-            if (imageOverlay.classList.contains('is-open')) {
-                closeImageModal();
-            }
+    function adjustModalTextWrapHeight() {
+        if (!modalBgImg || !modalTextWrap) return;
+        
+        // Attendre que l'image soit chargée
+        if (modalBgImg.complete) {
+            setTextWrapHeight();
+        } else {
+            modalBgImg.addEventListener('load', setTextWrapHeight);
+            // Timeout de sécurité
+            setTimeout(setTextWrapHeight, 500);
         }
-    });
+    }
 
-    // ========== FONCTIONS MODALE TEXTE ==========
+    function setTextWrapHeight() {
+        const bgImgHeight = modalBgImg.getBoundingClientRect().height;
+        const modalInnerHeight = modalInner ? modalInner.getBoundingClientRect().height : 480;
+        
+        // Utiliser la hauteur la plus petite entre l'image et la modale
+        const maxHeight = Math.min(bgImgHeight, modalInnerHeight) * 0.7;
+        
+        modalTextWrap.style.maxHeight = maxHeight + 'px';
+        modalTextWrap.style.overflowY = 'auto';
+        modalTextWrap.style.padding = '20px 15px';
+        
+        console.log(`Modal ajustée - hauteur image: ${bgImgHeight}px, hauteur max texte: ${maxHeight}px`);
+    }
+
     function openModal() {
         if (window.smoother) window.smoother.paused(true);
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
 
-        overlay.classList.add('is-open');
-        overlay.setAttribute('aria-hidden', 'false');
+        modalOverlay.classList.add('is-open');
+        modalOverlay.setAttribute('aria-hidden', 'false');
 
-        gsap.to(overlay, {
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            duration: 0.3,
-            ease: 'power2.out'
-        });
+         setTimeout(adjustModalTextWrapHeight, 50);
 
-        const modalInner = document.querySelector('.modal-inner');
-        
-        gsap.timeline()
-            .set(modalInner, { opacity: 1 })
-            .fromTo(modalInner,
-                { y: 30, scale: 0.95 },
-                { y: 0, scale: 1, duration: 0.4, ease: 'power3.out' }
-            );
+        if (typeof gsap !== 'undefined') {
+            gsap.to(modalOverlay, {
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+
+            gsap.timeline()
+                .set(modalInner, { opacity: 1 })
+                .fromTo(modalInner,
+                    { y: 30, scale: 0.95 },
+                    { y: 0, scale: 1, duration: 0.4, ease: 'power3.out' }
+                );
+        } else {
+            modalOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modalInner.style.opacity = '1';
+            modalInner.style.transform = 'translateY(0) scale(1)';
+        }
     }
 
     function closeModal() {
-        const modalInner = document.querySelector('.modal-inner');
-        
-        gsap.timeline({
-            onComplete: () => {
-                if (window.smoother) window.smoother.paused(false);
-                document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
-                
-                overlay.classList.remove('is-open');
-                overlay.setAttribute('aria-hidden', 'true');
-                
-                modalInner.style.opacity = '';
-                modalInner.style.transform = '';
-            }
-        })
-        .to(modalInner, {
-            y: 20, scale: 0.95, opacity: 0,
-            duration: 0.3, ease: 'power2.in'
-        })
-        .to(overlay, {
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            duration: 0.3
-        }, 0);
-
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        
-        // Forcer un reflow sur iOS
-        setTimeout(() => {
-            document.body.scrollTop = document.body.scrollTop;
-        }, 100);
+        if (typeof gsap !== 'undefined') {
+            gsap.timeline({
+                onComplete: () => {
+                    if (window.smoother) window.smoother.paused(false);
+                    document.body.style.overflow = '';
+                    document.documentElement.style.overflow = '';
+                    modalOverlay.classList.remove('is-open');
+                    modalOverlay.setAttribute('aria-hidden', 'true');
+                      // Réinitialiser le scroll
+                    if (modalTextWrap) modalTextWrap.scrollTop = 0;
+                }
+            })
+            .to(modalInner, {
+                y: 20, scale: 0.95, opacity: 0,
+                duration: 0.3, ease: 'power2.in'
+            })
+            .to(modalOverlay, {
+                backgroundColor: 'rgba(0, 0, 0, 0)',
+                duration: 0.3
+            }, 0);
+        } else {
+            modalOverlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        }
     }
 
-    // ========== FONCTIONS MODALE IMAGE ==========
-
-    document.querySelectorAll('.image-trigger').forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const imageSrc = trigger.dataset.image;
-        if (imageSrc) {
-            openImage(imageSrc);
-        }
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
     });
 
-});
+    document.querySelectorAll('.open-modal-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const content = btn.closest('.tl-content');
+            if (content) {
+                const title = content.getAttribute('data-modal-title') || '';
+                let desc = content.getAttribute('data-modal-desc') || '';
+                
+                if (modalTitle) modalTitle.textContent = title;
+                if (modalDesc) {
+                    if (desc.includes('&lt;') || desc.includes('&gt;') || desc.includes('&amp;')) {
+                        const textarea = document.createElement('textarea');
+                        textarea.innerHTML = desc;
+                        desc = textarea.value;
+                    }
+                    if (desc.includes('&#10;')) {
+                        desc = desc.replace(/&#10;\s*&#10;/g, '</p><p>');
+                        desc = desc.replace(/&#10;/g, '<br>');
+                        desc = '<p>' + desc + '</p>';
+                    }
+                    modalDesc.innerHTML = desc;
+                }
+            }
+            openModal();
+        });
+    });
 
-// Si vous gardez aussi les <a> avec onclick, assurez-vous que openImage est bien global
-window.openImage = function(imageSrc) {
-    const modalImage = document.getElementById('modal-image');
-    if (modalImage) {
-        modalImage.src = imageSrc;
-        openImageModal();
-    } else {
-        console.error('modal-image non trouvé');
-    }
-};
+    // ========== MODALE IMAGE ==========
+    const imageModalOverlay = document.getElementById('modal-image-overlay');
+    const modalImage = document.getElementById('modal-image-src');
+    const closeImageBtn = document.getElementById('modal-image-close-btn');
+    const imageModalInner = document.querySelector('.modal__inner--image');
 
-    function openImageModal() {
+    function openImageModal(imageSrc) {
+        if (modalImage) modalImage.src = imageSrc;
+        
         if (window.smoother) window.smoother.paused(true);
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
 
-        imageOverlay.classList.add('is-open');
-        imageOverlay.setAttribute('aria-hidden', 'false');
+        imageModalOverlay.classList.add('is-open');
+        imageModalOverlay.setAttribute('aria-hidden', 'false');
 
-        gsap.to(imageOverlay, {
-            backgroundColor: 'rgba(0, 0, 0, 0.85)',
-            duration: 0.25,
-            ease: 'power2.out'
-        });
+        if (typeof gsap !== 'undefined') {
+            gsap.to(imageModalOverlay, {
+                backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                duration: 0.25,
+                ease: 'power2.out'
+            });
 
-        const imageModalInner = document.querySelector('.image-modal-inner');
-        
-        gsap.timeline()
-            .set(imageModalInner, { opacity: 1 })
-            .fromTo(imageModalInner,
-                { y: 20, scale: 0.9 },
-                { y: 0, scale: 1, duration: 0.35, ease: 'back.out(1.1)' }
-            );
+            gsap.timeline()
+                .set(imageModalInner, { opacity: 1 })
+                .fromTo(imageModalInner,
+                    { y: 20, scale: 0.9 },
+                    { y: 0, scale: 1, duration: 0.35, ease: 'back.out(1.1)' }
+                );
+        } else {
+            imageModalOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+        }
     }
 
     function closeImageModal() {
-        const imageModalInner = document.querySelector('.image-modal-inner');
-        
-        gsap.timeline({
-            onComplete: () => {
-                if (window.smoother) window.smoother.paused(false);
-                document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
-                
-                imageOverlay.classList.remove('is-open');
-                imageOverlay.setAttribute('aria-hidden', 'true');
-                
-                imageModalInner.style.opacity = '';
-                imageModalInner.style.transform = '';
-                modalImage.src = ''; // Vide la source
-            }
-        })
-        .to(imageModalInner, {
-            y: 15, scale: 0.9, opacity: 0,
-            duration: 0.25, ease: 'power2.in'
-        })
-        .to(imageOverlay, {
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            duration: 0.25
-        }, 0);
-
-         document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        
-        // Forcer un reflow sur iOS
-        setTimeout(() => {
-            document.body.scrollTop = document.body.scrollTop;
-        }, 100);
+        if (typeof gsap !== 'undefined') {
+            gsap.timeline({
+                onComplete: () => {
+                    if (window.smoother) window.smoother.paused(false);
+                    document.body.style.overflow = '';
+                    document.documentElement.style.overflow = '';
+                    imageModalOverlay.classList.remove('is-open');
+                    imageModalOverlay.setAttribute('aria-hidden', 'true');
+                    if (modalImage) modalImage.src = '';
+                }
+            })
+            .to(imageModalInner, {
+                y: 15, scale: 0.9, opacity: 0,
+                duration: 0.25, ease: 'power2.in'
+            })
+            .to(imageModalOverlay, {
+                backgroundColor: 'rgba(0, 0, 0, 0)',
+                duration: 0.25
+            }, 0);
+        } else {
+            imageModalOverlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+            if (modalImage) modalImage.src = '';
+        }
     }
 
-    const infosSection = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".main-section",
-            start: "bottom 50%",
-            end: "bottom 30%",
-            toggleActions: "play none none reverse",
-            // markers: true,
+    if (closeImageBtn) closeImageBtn.addEventListener('click', closeImageModal);
+    if (imageModalOverlay) imageModalOverlay.addEventListener('click', (e) => {
+        if (e.target === imageModalOverlay) closeImageModal();
+    });
+
+    document.querySelectorAll('.image-trigger').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const imageSrc = trigger.getAttribute('data-image');
+            if (imageSrc) {
+                openImageModal(imageSrc);
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (modalOverlay && modalOverlay.classList.contains('is-open')) closeModal();
+            if (imageModalOverlay && imageModalOverlay.classList.contains('is-open')) closeImageModal();
         }
     });
-
- 
-    infosSection.to(".info-bar", { 
-        opacity: 0.95, 
-        x: 0, 
-        duration: 0.5, 
-        ease: "power2.out"
-    });
-
-    infosSection.to(".info-bg-logo-1", { 
-        opacity: 1, 
-        x: 0, 
-        duration: 0.5, 
-        ease: "power2.out"
-    });
-
-    infosSection.to(".info-desc", { 
-        opacity: 1, 
-        x: 0, 
-        duration: 0.5, 
-        ease: "power2.out"
-    });
-
-    infosSection.to(".info-bg-logo-2", { 
-        opacity: 1, 
-        x: 0, 
-        duration: 0.5, 
-        ease: "power2.out"
-    });
-
-    infosSection.
-    to(".info-image-1", { 
-        opacity: 1, 
-        x: 0, 
-        rotation: 10, 
-        duration: 0.7, 
-        ease: "power4.out" 
-    }, "-=0.1")
-    .to(".info-image-2", { 
-        opacity: 1, 
-        x: 0, 
-        rotation: -10, 
-        duration: 0.7, 
-        ease: "power4.out" 
-    }, "-=0.1");
-   
- 
-        
 });
+
+// ========== TIMELINE VERTICALE - VERSION CORRIGÉE ==========
+
+/**
+ * Met à jour la position de la ligne verticale dans la timeline
+ * Version robuste avec vérification des dimensions
+ */
+function updateVline() {
+    const customTlLeft = document.querySelectorAll('.custom-tl-left');
+    const vline = document.querySelector('.custom-tl-vline');
+    
+    console.log("updateVline called - éléments trouvés:", {
+        customTlLeftLength: customTlLeft.length,
+        vlineExists: !!vline
+    });
+    
+    if (!customTlLeft.length || !vline) return;
+
+    const container = document.querySelector('.custom-timeline-grid');
+    if (!container) {
+        console.warn("Container .custom-timeline-grid not found");
+        return;
+    }
+    
+    // Forcer un reflow pour s'assurer que les dimensions sont à jour
+    void container.offsetHeight;
+    
+    const containerRect = container.getBoundingClientRect();
+    
+    // Vérifier que le container a des dimensions valides
+    if (containerRect.height === 0) {
+        console.warn("Container height is 0, retrying...");
+        // Réessayer après un court délai
+        setTimeout(updateVline, 100);
+        return;
+    }
+    
+    // S'assurer que les éléments .custom-tl-left sont positionnés
+    let firstValidElement = null;
+    let lastValidElement = null;
+    
+    for (let i = 0; i < customTlLeft.length; i++) {
+        const rect = customTlLeft[i].getBoundingClientRect();
+        if (rect.height > 0 || rect.top > 0) {
+            if (!firstValidElement) firstValidElement = customTlLeft[i];
+            lastValidElement = customTlLeft[i];
+        }
+    }
+    
+    if (!firstValidElement || !lastValidElement) {
+        console.warn("No valid elements found with proper dimensions");
+        return;
+    }
+    
+    const firstRect = firstValidElement.getBoundingClientRect();
+    const lastRect = lastValidElement.getBoundingClientRect();
+    
+    console.log("Dimensions calculées:", {
+        containerTop: containerRect.top,
+        containerBottom: containerRect.bottom,
+        containerHeight: containerRect.height,
+        firstTop: firstRect.top,
+        lastBottom: lastRect.bottom,
+        firstHeight: firstRect.height,
+        lastHeight: lastRect.height
+    });
+    
+    // Ajuster les offsets en fonction des hauteurs réelles
+    const topOffset = firstRect.height / 2;
+    const bottomOffset = lastRect.height / 2;
+    
+    const topPosition = firstRect.top - containerRect.top + topOffset;
+    const bottomPosition = containerRect.bottom - lastRect.bottom + bottomOffset;
+    
+    console.log("Positions calculées:", { topPosition, bottomPosition });
+    
+    if (topPosition > 0 && bottomPosition > 0) {
+        vline.style.top = topPosition + 'px';
+        vline.style.bottom = bottomPosition + 'px';
+    } else {
+        console.warn("Positions invalides, utilisation des valeurs par défaut");
+        vline.style.top = '25px';
+        vline.style.bottom = '25px';
+    }
+}
+
+/**
+ * Initialise la timeline avec plusieurs tentatives
+ * @param {number} attempt - Numéro de tentative
+ */
+function initTimelineVline(attempt = 0) {
+    const maxAttempts = 5;
+    const delay = 200;
+    
+    console.log(`initTimelineVline - Tentative ${attempt + 1}/${maxAttempts}`);
+    
+    // Vérifier si les éléments existent
+    const customTlLeft = document.querySelectorAll('.custom-tl-left');
+    const vline = document.querySelector('.custom-tl-vline');
+    const container = document.querySelector('.custom-timeline-grid');
+    
+    if (customTlLeft.length && vline && container) {
+        // Vérifier si les dimensions sont valides
+        const containerRect = container.getBoundingClientRect();
+        const firstRect = customTlLeft[0].getBoundingClientRect();
+        
+        if (containerRect.height > 0 && firstRect.height > 0) {
+            console.log("Timeline prête, mise à jour de la ligne");
+            updateVline();
+            return;
+        }
+    }
+    
+    if (attempt < maxAttempts) {
+        setTimeout(() => initTimelineVline(attempt + 1), delay);
+    } else {
+        console.warn("Timeline non initialisée après plusieurs tentatives");
+        // Définir des valeurs par défaut
+        if (vline) {
+            vline.style.top = '25px';
+            vline.style.bottom = '25px';
+        }
+    }
+}
+
+// Observer les changements de taille de la fenêtre avec debounce
+let resizeTimeout;
+function handleResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        updateVline();
+    }, 150);
+}
+
+// Utiliser MutationObserver pour détecter quand le contenu est chargé
+function observeTimelineChanges() {
+    const container = document.querySelector('.custom-timeline-grid');
+    if (!container) return;
+    
+    const observer = new MutationObserver(() => {
+        updateVline();
+    });
+    
+    observer.observe(container, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class']
+    });
+    
+    return observer;
+}
+
+// Initialisation principale
+function initAnimations() {
+    console.log('Animations initialisées');
+    
+    // Initialiser AOS si disponible
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+    }
+    
+    // Initialiser la timeline avec plusieurs stratégies
+    initTimelineVline();
+    
+    // Observer les changements
+    const observer = observeTimelineChanges();
+    
+    // Écouter les événements de chargement des images
+    const images = document.querySelectorAll('.custom-tl-img');
+    let loadedImagesCount = 0;
+    
+    function onImageLoad() {
+        loadedImagesCount++;
+        if (loadedImagesCount === images.length) {
+            updateVline();
+        }
+    }
+    
+    images.forEach(img => {
+        if (img.complete) {
+            onImageLoad();
+        } else {
+            img.addEventListener('load', onImageLoad);
+            img.addEventListener('error', onImageLoad);
+        }
+    });
+    
+    // Nettoyer l'observateur après un délai (optionnel)
+    setTimeout(() => {
+        if (observer) observer.disconnect();
+    }, 5000);
+}
+
+// Événements avec gestion de l'état du DOM
+window.addEventListener('load', () => {
+    // Attendre que tout soit chargé
+    setTimeout(() => {
+        updateVline();
+    }, 100);
+});
+
+window.addEventListener('resize', handleResize);
+
+// Écouter également les changements d'orientation
+window.addEventListener('orientationchange', () => {
+    setTimeout(updateVline, 100);
+});
+
+// Exporter les fonctions globales
+window.updateVline = updateVline;
+window.initAnimations = initAnimations;
+
+// Fonction pour ouvrir la modale image (globale)
+window.openImageModal = function(imageSrc) {
+    const modalImage = document.getElementById('modal-image-src');
+    if (modalImage) {
+        modalImage.src = imageSrc;
+        // Déclencher l'ouverture de la modale
+        const event = new CustomEvent('openImageModal');
+        document.dispatchEvent(event);
+    }
+};
