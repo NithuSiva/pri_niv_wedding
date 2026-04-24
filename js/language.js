@@ -158,9 +158,9 @@ const translations = {
     "custom-tl-6-desc": "DANSE <br> SOLO",
     "custom-tl-7-heure": "22h30",
     "custom-tl-7-desc": "SOIRÉE",
-    "img-ct-rcp-bg": "assets/img/ct-rcp-fr.png",
-    "img-carte-reception": "assets/img/carte-reception-fr.png",
-    "img-carte-fr": "assets/img/carte-fr.png",
+    "img-ct-rcp-bg": "assets/img/rece/ct-rcp-fr.png",
+    "img-carte-reception": "assets/img/rece/carte-reception-fr.png",
+    "img-carte-fr": "assets/img/reli/carte-fr.png",
   },
   en: {
     "main-rel-details": "Hindu Ceremony Details",
@@ -214,9 +214,9 @@ const translations = {
     "custom-tl-6-desc": "sOLO dANCE",
     "custom-tl-7-heure": "10:30 pm",
     "custom-tl-7-desc": "night Party",
-    "img-ct-rcp-bg": "assets/img/ct-rcp-en.png",
-    "img-carte-reception": "assets/img/carte-reception-en.png",
-    "img-carte-fr": "assets/img/carte-en.png",
+    "img-ct-rcp-bg": "assets/img/rece/ct-rcp-en.png",
+    "img-carte-reception": "assets/img/rece/carte-reception-en.png",
+    "img-carte-fr": "assets/img/reli/carte-en.png",
   },
   ta: {
     "main-rel-details": "இந்து திருமண விவரங்கள்",
@@ -270,9 +270,9 @@ const translations = {
     "custom-tl-6-desc": "தனி <br> நடனம்",
     "custom-tl-7-heure": "இரவு 10:30",
     "custom-tl-7-desc": "இரவு விழா",
-    "img-ct-rcp-bg": "assets/img/ct-rcp-en.png",
-    "img-carte-reception": "assets/img/carte-reception-en.png",
-    "img-carte-fr": "assets/img/carte-en.png",
+    "img-ct-rcp-bg": "assets/img/rece/ct-rcp-en.png",
+    "img-carte-reception": "assets/img/rece/carte-reception-en.png",
+    "img-carte-fr": "assets/img/reli/carte-en.png",
   }
 };
 

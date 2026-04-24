@@ -132,7 +132,7 @@ html, body {
 .main {
     min-height: 100vh;
     width: 100dvw;
-    background-image: url('../../assets/img/red_bg.png');
+    background-image: url('../../assets/img/reli/red_bg.png');
     background-repeat: repeat;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -229,7 +229,7 @@ html, body {
 .infos {
     min-height: 80vh;
     width: 100dvw;
-    background-image: url(../../assets/img/red_bg.png);
+    background-image: url('../../assets/img/reli/red_bg.png');
     background-repeat: repeat;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -337,7 +337,7 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-image: url('../../assets/img/beige_bg.png');
+    background-image: url('../../assets/img/reli/beige_bg.png');
     background-repeat: repeat;
     padding: 40px 20px;
 }
@@ -506,7 +506,7 @@ hr {
     width: 100vw;
     height: 70vh;
     min-height: fit-content;
-    background-image: url('../../assets/img/red_bg.png');
+    background-image: url('../../assets/img/reli/red_bg.png');
     background-repeat: repeat;
     position: relative;
 }
@@ -555,7 +555,7 @@ hr {
     grid-row-gap: 0px;
     width: 100vw;
     min-height: 100vh;
-    background-image: url('../../assets/img/beige_bg.png');
+    background-image: url('../../assets/img/reli/beige_bg.png');
     background-repeat: repeat;
 }
 
@@ -665,7 +665,7 @@ hr {
 .tl-wrap {
     width: 100%;
     height: fit-content;
-    background-image: url('../../assets/img/red_bg.png');
+    background-image: url('../../assets/img/reli/red_bg.png');
     background-repeat: repeat;
     font-family: var(--font-sans);
     padding: 0 10px;
@@ -1021,7 +1021,7 @@ a {
 .rcp-main {
     min-height: 50vh;
     width: 100dvw;
-    background-image: url(../../assets/img/blue_bg.png);
+    background-image: url('../../assets/img/rece/blue_bg.png');
     background-repeat: repeat;
     background-size: 720px 1280px;
     display: grid;
@@ -1070,7 +1070,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-image: url('../../assets/img/white_bg.png');
+    background-image: url('../../assets/img/rece/white_bg.png');
     background-repeat: repeat;
     padding: 40px 20px;
 }
@@ -1194,7 +1194,7 @@ a {
     width: 100vw;
     height: 40vh;
     min-height: fit-content;
-    background-image: url('../../assets/img/ct-rcp.png');
+    background-image: url('../../assets/img/rece/ct-rcp.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -1228,7 +1228,7 @@ a {
     grid-row-gap: 0px;
     width: 100vw;
     min-height: 100vh;
-    background-image: url('../../assets/img/white_bg.png');
+    background-image: url('../../assets/img/rece/white_bg.png');
     background-repeat: repeat;
 }
 
@@ -1347,7 +1347,7 @@ a {
 .custom-timeline-wrap {
     width: 100%;
     height: fit-content;
-    background-image: url('../../assets/img/white_bg.png');
+    background-image: url('../../assets/img/rece/white_bg.png');
     background-repeat: repeat;
     position: relative;
     box-sizing: border-box;
