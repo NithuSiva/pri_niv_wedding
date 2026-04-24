@@ -486,8 +486,7 @@ html.lang-ta .custom-tl-left .custom-tl-text p {
 
 
 /* Titre countdown en Tamil */
-html.lang-ta .countdown-hindu__title > h1,
-html.lang-ta .countdown-rcp .countdown-rcp__content > div > p,
+html.lang-ta .countdown-hindu__title > h1, 
 html.lang-ta .custom-timeline-title {
     font-size: clamp(1.5rem, 10vw, 2.5rem) !important;
 }
@@ -509,6 +508,7 @@ html.lang-ta .countdown-hindu__content > div > p,
 html.lang-ta .countdown-rcp__content > div > p {
     font-size: clamp(0.8rem, 4vw, 1.2rem) !important;
 }
+
 
 /* Titre "Count Down" en Tamil */
 html.lang-ta .countdown-hindu__title > h1 {
