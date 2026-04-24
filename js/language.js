@@ -315,13 +315,18 @@ const translations = {
     "custom-tl-7-heure": "இரவு 10:30",
     "custom-tl-7-desc": "இரவு விழா",
 
-     "img-ct-rcp-bg": "assets/img/ct-rcp-ta.png",
-    "img-carte-reception": "assets/img/carte-reception-ta.png",
-    "img-carte-fr": "assets/img/carte-ta.png",
+     "img-ct-rcp-bg": "assets/img/ct-rcp-en.png",
+    "img-carte-reception": "assets/img/carte-reception-en.png",
+    "img-carte-fr": "assets/img/carte-en.png",
 }
 };
 
 function applyLang(lang) {
+    // Mettre à jour l'attribut lang et la classe sur html
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.classList.remove('lang-fr', 'lang-en', 'lang-ta');
+    document.documentElement.classList.add('lang-' + lang);
+
     // 1. Textes (data-i18n)
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');

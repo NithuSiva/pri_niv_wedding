@@ -387,3 +387,127 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
+
+
+/* Surcharge pour le tamoul */
+html.lang-ta .language-title > span,
+html.lang-ta .language-title > .bold-text,
+html.lang-ta .language-title > .regular-text,
+html.lang-ta .language-box > span {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .main-title > h1 {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .main-desc > span {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .ct-title > h1 {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta #ct-h1-days,
+html.lang-ta #ct-h1-hours,
+html.lang-ta #ct-h1-mins,
+html.lang-ta #ct-h1-secs {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .ct-content > div > p {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .info-desc {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rel-place-title > h1 {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rel-place-desc-title,
+html.lang-ta .rel-place-dress-code-title {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rel-place-desc-adresse {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rel-place-dress-code-desc {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .tl-title {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .tl-content > h3,
+html.lang-ta .tl-content > p {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .tl-modal-title,
+html.lang-ta .tl-modal-desc {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .open-modal-btn {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rcp-main-title > h1 {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rcp-main-text > h1 {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .ct-rcp-title > h1 {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta #ct-rcp-h1-days,
+html.lang-ta #ct-rcp-h1-hours,
+html.lang-ta #ct-rcp-h1-mins,
+html.lang-ta #ct-rcp-h1-secs {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .ct-rcp-content > div > p {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rec-place-title > h1 {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rec-place-desc-title,
+html.lang-ta .rec-place-dress-code-title {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rec-place-desc-adresse {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .rec-place-dress-code-desc {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .custom-timeline-title {
+    font-family: 'tamil-normal', serif;
+}
+
+html.lang-ta .custom-tl-right .custom-tl-text h3,
+html.lang-ta .custom-tl-right .custom-tl-text p,
+html.lang-ta .custom-tl-left .custom-tl-text h3,
+html.lang-ta .custom-tl-left .custom-tl-text p {
+    font-family: 'tamil-normal', serif;
+    text-transform: none; /* Enlever les majuscules pour le tamoul */
+    letter-spacing: 0; /* Réduire l'espacement des lettres */
+}
