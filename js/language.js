@@ -2,6 +2,20 @@
  * @param {string} lang - Code langue ('fr', 'en', 'ta')
  */
 
+document.addEventListener('visibilitychange', function() {
+    const music = document.getElementById('bg-music');
+    if (!music) return;
+
+    if (document.hidden) {
+        // L'utilisateur a quitté l'onglet ou réduit l'application
+        music.pause();
+    } else {
+        // L'utilisateur est revenu sur la page
+        // On relance seulement si la musique était déjà censée jouer
+        music.play().catch(err => console.log("Reprise bloquée jusqu'au prochain clic."));
+    }
+});
+
 function playMusic() {
     const music = document.getElementById('bg-music');
     if (music) {
@@ -345,3 +359,4 @@ function applyLang(lang) {
 window.selectLang = selectLang;
 window.applyLang = applyLang;
 window.goBack = goBack;
+
