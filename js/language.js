@@ -195,8 +195,11 @@ const translations = {
     "img-carte-fr": "assets/img/reli/carte-fr.png",
     "vendors" : "Prestataires",
     "to-come" : "Plus de prestataires à venir ...",
+    "tl-title-2" : "Itinéraire",
   },
   en: {
+    "tl-title-2" : "Itinerary",
+
     "main-rel-details": "Hindu Ceremony Details",
     "main-rec-details": "Reception Details",
     "cd-title": "Countdown",
