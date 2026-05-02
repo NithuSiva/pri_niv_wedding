@@ -5,11 +5,11 @@
 }
 
 html, body {
-    width: 100%;
     max-width: 480px;
     margin: 0 auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    max-width: 100vw;
 }
 
 
@@ -1468,11 +1468,60 @@ a {
 }
 
 
-html, body {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
+.presta-section {
+    min-height: 70vh;
+    width: 100dvw;
+    background-image: url('../../assets/img/rece/white_bg.png');
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 50px;
 }
+
+.presta-title-insta {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-left: 20px;
+}
+
+
+
+.presta-insta {
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.presta-insta > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presta-section > div > img {
+    width: 20%;
+    height: auto;
+}
+
+.presta-section > div {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.presta-icon {
+    width: 15%;
+    height: auto;
+}
+
 
 @media screen and (min-width: 768px) {
     body {

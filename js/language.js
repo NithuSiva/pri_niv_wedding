@@ -193,6 +193,8 @@ const translations = {
     "img-ct-rcp-bg": "assets/img/rece/ct-rcp-fr.png",
     "img-carte-reception": "assets/img/rece/carte-reception-fr.png",
     "img-carte-fr": "assets/img/reli/carte-fr.png",
+    "vendors" : "Prestataires",
+    "to-come" : "Plus de prestataires à venir ...",
   },
   en: {
     "main-rel-details": "Hindu Ceremony Details",
@@ -249,6 +251,8 @@ const translations = {
     "img-ct-rcp-bg": "assets/img/rece/ct-rcp-en.png",
     "img-carte-reception": "assets/img/rece/carte-reception-en.png",
     "img-carte-fr": "assets/img/reli/carte-en.png",
+    "vendors" : "Vendors",
+    "to-come" : "More vendors coming soon ...",
   },
   ta: {
     "main-rel-details": "இந்து திருமண விவரங்கள்",

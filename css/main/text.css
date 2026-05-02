@@ -363,6 +363,44 @@
     text-transform: uppercase;
 }
 
+.presta-section > h1 {
+    text-align: center;
+    font-size: clamp(2rem, 14vw, 8rem);
+    color: #6b1fad;
+    margin-bottom: 30px;
+    font-family: betmo-regular;
+    font-weight: normal;
+    padding-top: 50px;
+}
+
+.presta-title-insta > h1 {
+   color: #000000;
+    margin: 0 0 2px;
+    width: fit-content;
+    font-family: wagon-light;
+    font-size: clamp(0.8rem, 15vw, 1.0rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presta-insta > p {
+    font-family: 'moglandemo';
+}
+
+.presta-6 > h1 {
+
+     color: #000000;
+    margin: 0 0 2px;
+    width: 100%;
+    font-family: wagon-light;
+    font-size: clamp(0.8rem, 15vw, 0.9rem);
+    opacity: 90%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;  
+}
 
 html.lang-ta .lang-screen__title > span,
 html.lang-ta .lang-screen__title > .lang-screen__title-bold,
@@ -523,3 +561,4 @@ html.lang-ta .modal__desc {
 html.lang-ta .modal__title {
     font-size: clamp(1rem, 5vw, 1.3rem) !important;
 }
+
