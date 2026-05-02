@@ -1495,7 +1495,7 @@ a {
     display: flex;
     width: fit-content;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .presta-insta > p {
