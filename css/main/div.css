@@ -922,8 +922,15 @@ hr {
 }
 
 .modal__desc {
-    height: 45vh;
-    overflow: scroll;
+    height: 150vh;
+    overflow-y: scroll !important;  /* Force le scroll */
+    -webkit-overflow-scrolling: touch !important;  /* Scroll fluide iOS */
+    padding: 15px;
+    box-sizing: border-box;
+    
+    /* Force l'affichage de la scrollbar */
+    scrollbar-width: thin !important;  /* Firefox */
+    scrollbar-color: rgba(115, 15, 15, 0.5) rgba(115, 15, 15, 0.1) !important;
 }
 
 .modal__btn-close {
@@ -1017,13 +1024,12 @@ a {
     tap-highlight-color: transparent;
 }
 
-
 .rcp-main {
-    min-height: 50vh;
+    min-height: 70vh;
     width: 100dvw;
-    background-image: url('../../assets/img/rece/blue_bg.png');
+    background-image: url('../../assets/img/rece/pri_niv_2.jpeg');
     background-repeat: repeat;
-    background-size: 720px 1280px;
+    background-size: cover;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -1053,7 +1059,7 @@ a {
 }
 
 .rcp-main-text {
-    grid-area: 2 / 1 / 6 / 6;
+    grid-area: 3 / 1 / 7 / 6;
     width: 100vw;
     display: flex;
     flex-direction: column;

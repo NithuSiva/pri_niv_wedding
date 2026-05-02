@@ -194,7 +194,7 @@
     font-size: clamp(2rem, 12vw, 8rem);
     font-weight: normal;
     padding-top: 2rem;
-    color: #E7D7C0;
+    color: #faf6f1;
     margin-bottom: 2rem;
 }
 
@@ -202,21 +202,19 @@
     width: 100%;
     text-align: center;
     font-family: betmo-regular;
-    font-size: clamp(1rem, 10vw, 1.2rem);
+    font-size: clamp(1rem, 10vw, 2rem);
     font-weight: normal;
-    padding-top: 2rem;
-    color: #E7D7C0;
-    margin-bottom: 2rem;
+    color: #faf6f1;
 }
 
 .rcp-main-text > p {
     width: 100%;
     text-align: center;
     font-family: wagon-light-italic;
-    font-size: clamp(1rem, 10vw, 0.8rem);
+    font-size: clamp(1rem, 10vw, 1.2rem);
     font-weight: normal;
     padding-top: 2rem;
-    color: #E7D7C0;
+    color: #faf6f1;
     margin-bottom: 2rem;
     width: 80vw;
     line-height: 1.8rem;

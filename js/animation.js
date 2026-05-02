@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const modalInnerHeight = modalInner ? modalInner.getBoundingClientRect().height : 480;
         
         // Utiliser la hauteur la plus petite entre l'image et la modale
-        const maxHeight = Math.min(bgImgHeight, modalInnerHeight) * 0.7;
+        const maxHeight = Math.min(bgImgHeight, modalInnerHeight) * 0.9;
         
         modalTextWrap.style.maxHeight = maxHeight + 'px';
         modalTextWrap.style.overflowY = 'auto';

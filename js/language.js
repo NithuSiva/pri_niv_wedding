@@ -1,6 +1,20 @@
 /**
  * @param {string} lang - Code langue ('fr', 'en', 'ta')
  */
+
+function playMusic() {
+    const music = document.getElementById('bg-music');
+    if (music) {
+        music.play().catch(error => {
+            console.log("Lecture bloquée, attente d'une interaction utilisateur.");
+            // Secours pour mobile si l'interaction n'est pas encore enregistrée
+            document.addEventListener('click', () => {
+                music.play();
+            }, { once: true });
+        });
+    }
+}
+
 function selectLang(lang) {
     // localStorage.setItem('wedding-lang', lang);
     
@@ -20,10 +34,12 @@ function selectLang(lang) {
                 window.initAnimations();
             }
             showContentScreen();
+            playMusic();
         });
     } else {
         applyLang(lang);
         showContentScreen();
+        playMusic();
     }
 }
 
@@ -55,10 +71,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 applyLang(saved);
                 if (window.initAnimations) window.initAnimations();
                 showContentScreen();
+                playMusic();
             });
         } else {
             applyLang(saved);
             showContentScreen();
+            playMusic();
         }
     } else {
         // En attente de choix de langue
@@ -145,7 +163,7 @@ const translations = {
     "tl-desc-10": "Bénédictions finales & adieux de la mariée.",
     "rcp-main-title": "Réception de Mariage",
     "custom-tl-1-heure": "18h00",
-    "custom-tl-1-desc": "Entrée des mariés",
+    "custom-tl-1-desc": "Entrée <br> des mariés",
     "custom-tl-2-heure": "19h00",
     "custom-tl-2-desc": "DÉCOUPE <br> DU GÂTEAU",
     "custom-tl-3-heure": "19h30",
@@ -201,7 +219,7 @@ const translations = {
     "tl-desc-10": "Final blessings bride's farewell.",
     "rcp-main-title": "Wedding Reception",
     "custom-tl-1-heure": "6:00 Pm",
-    "custom-tl-1-desc": "Entry of the bride and groom",
+    "custom-tl-1-desc": "Entry  <br> of the  <br> bride and groom",
     "custom-tl-2-heure": "7:00 Pm",
     "custom-tl-2-desc": "CAKE <br> CUTTING",
     "custom-tl-3-heure": "7:30 pm",
